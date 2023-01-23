@@ -1,0 +1,46 @@
+﻿@using WebApplication5.Models;
+@model List<Posts>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+<div class="container-fluid" style="display:flex; justify-content:space-between; align-items:center">
+    <h1>Sliders:</h1>
+    <a asp-action="create" asp-controller="Banner" class="btn btn-success">Create a new Slider</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Header</th>
+            <th scope="col">Title</th>
+            <th scope="col">Images</th>
+            <th scope="col">Description</th>
+            <th scope="col">RedirectImages</th>
+            <th scope="col">HeaderCard</th>
+            <th scope="col">ButtonText</th>
+            <th scope="col">Buttonurl</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Posts post in Model)
+        {
+            count++;
+            <tr>
+                <th scope="row">@count</th>
+                <td>@post.Header</td>
+                <td>@post.Title</td>
+                <td>@post.Images</td>
+                <td>@post.Description</td>
+                <td>@post.RedirectUrl</td>
+                <td>@post.BannerHeader</td>
+                <td>@post.ButtonredirectText</td>
+                <td>@post.ButtonRedirectUrl</td>
+                <td>
+                    <a asp-action="update" asp-controller="Banner" asp-route-id=@post.Id class="btn btn-info">Update</a>
+                    <a asp-action="delete" asp-controller="Banner" asp-route-id=@post.Id class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

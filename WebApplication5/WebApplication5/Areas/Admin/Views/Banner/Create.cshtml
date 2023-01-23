@@ -1,0 +1,49 @@
+﻿@using WebApplication5.Models;
+@model Posts
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create a Slider</h1>
+
+<div class="container">
+    <form method="post" asp-action="create">
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label asp-for="Header" class="form-label">Header</label>
+                <input class="form-control" asp-for="Header" placeholder="Header">
+            </div>
+            <div class="mb-3 col-md-4">
+                <label asp-for="Title" class="form-label">Title</label>
+                <input class="form-control" asp-for="Title" placeholder="Title">
+            </div>
+            <div>
+                <label asp-for="ImagesFile" class="form-label">ImagesFile</label>
+                <input class="form-control" asp-for="ImagesFile" placeholder="ImagesFile">
+
+            </div>
+            <div>
+                <label asp-for="BannerHeader" class="form-label">BannerHeader</label>
+                <input class="form-control" asp-for="BannerHeader" placeholder="BannerHeader">
+
+            </div>
+            <div class="mb-3 col-md-4">
+                <label asp-for="Description" class="form-label">Description</label>
+                <input class="form-control" asp-for="Description" placeholder="Description">
+            </div>
+            <div style="margin-bottom:20px">
+                <label asp-for="ButtonredirectText" class="form-label">ButtonRedirect</label>
+                <input class="form-control" asp-for="ButtonredirectText" placeholder="ButtonredirectText">
+            </div>
+            <div style="margin-bottom:20px">
+                <label asp-for="ButtonRedirectUrl" class="form-label">ButtonRedirectUrl</label>
+                <input class="form-control" asp-for="ButtonRedirectUrl" placeholder="ButtonRedirectUrl">
+            </div>
+            <div class="mb-3 col-md-4">
+                <label asp-for="RedirectUrl" class="form-label">RedirectUrl</label>
+                <input class="form-control" asp-for="RedirectUrl" placeholder="RedirectUrl">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
